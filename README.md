@@ -96,3 +96,4 @@ This forkable repo aims at giving a walkthrough on how to deploy applications on
 ## ! think of deleting unused resources
 
 - to delete a cluster and associated resources (VPC, subnets, etc.) created with `eksctl` your can run => `eksctl delete cluster --name=udacity-test`
+- also you must think of deleting your CI/CD CloudFormation stack
