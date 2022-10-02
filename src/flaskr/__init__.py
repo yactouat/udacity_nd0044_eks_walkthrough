@@ -23,7 +23,7 @@ def create_app(test_config=None):
     @app.route('/')
     def base():
         return jsonify({
-            "msg": "API is up",
+            "msg": "my API is up",
             "data": None
         })
 
