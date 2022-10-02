@@ -1,0 +1,12 @@
+# this docker compose is here to test things locally
+
+services:
+
+  app:
+    build: 
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - 80:5000
+    volumes:
+      - ./src:/usr/src/app

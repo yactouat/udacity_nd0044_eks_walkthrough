@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: eks-walkthrough-deployment
+  labels:
+    app: eks-walkthrough
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: eks-walkthrough
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 2
+      maxSurge: 2
+  template:
+    metadata:
+      labels:
+        app: eks-walkthrough
+    spec:
+      containers:
+      - name: eks-walkthrough
+        image: IMAGE_FROM_ECR
+        securityContext:
+          privileged: false
+          readOnlyRootFilesystem: false
+          allowPrivilegeEscalation: false
+        ports:
+          - containerPort: 5000
